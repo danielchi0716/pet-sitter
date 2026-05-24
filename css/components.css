@@ -35,6 +35,15 @@
   z-index:1;
   font-size:13px;
 }
+/* 真實照片版：撐滿相框、裁切置中，並隱藏佔位用的虛線內框 */
+.cat-photo--filled::after{display:none;}
+.cat-photo--filled img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
 .cat-body{padding:18px 18px 20px;}
 .cat-name{
   font-family:var(--font-hand);
@@ -55,6 +64,17 @@
   border-radius:999px;
   line-height:1.2;
   transform:rotate(-2deg);
+}
+/* 性別小膠囊：沿用橘色系，不引入藍/粉以維持米白+橘調性 */
+.cat-name .cat-sex{
+  font-family:var(--font-hand);
+  font-size:13px;
+  font-weight:600;
+  color:var(--orange-d);
+  background:var(--orange-l);
+  padding:3px 10px;
+  border-radius:999px;
+  line-height:1.3;
 }
 .cat-row{
   display:flex;
