@@ -9,8 +9,8 @@
 <!-- Google Fonts: 手寫感字體組合 -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<!-- 標題用：Caveat / Patrick Hand / Klee One；內文用：Noto Sans TC (確保所有中文字都正常顯示) -->
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Klee+One:wght@400;600&family=Patrick+Hand&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<!-- 標題用：Caveat / Patrick Hand / LXGW WenKai TC；內文用：Noto Sans TC (確保所有中文字都正常顯示) -->
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=LXGW+WenKai+TC:wght@400;700&family=Patrick+Hand&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="css/variables.css">
 <link rel="stylesheet" href="css/base.css">
@@ -428,8 +428,8 @@
         <button class="item-card" data-item="food">
           <span class="item-icon">🥫</span>
           <div class="item-text">
-            <div class="item-name">飼料</div>
-            <div class="item-summary"><span class="var">{{飼料位置摘要}}</span></div>
+            <div class="item-name">乾飼料</div>
+            <div class="item-summary">電視旁高櫃子內後方</div>
           </div>
           <span class="arrow">→</span>
         </button>
@@ -439,17 +439,7 @@
           <span class="item-icon">📦</span>
           <div class="item-text">
             <div class="item-name">貓砂</div>
-            <div class="item-summary"><span class="var">{{貓砂位置摘要}}</span></div>
-          </div>
-          <span class="arrow">→</span>
-        </button>
-
-        <!-- 吸塵器 -->
-        <button class="item-card" data-item="vacuum">
-          <span class="item-icon">🧹</span>
-          <div class="item-text">
-            <div class="item-name">吸塵器</div>
-            <div class="item-summary"><span class="var">{{吸塵器位置摘要}}</span></div>
+            <div class="item-summary">床下收納櫃</div>
           </div>
           <span class="arrow">→</span>
         </button>
@@ -459,17 +449,47 @@
           <span class="item-icon">🗑️</span>
           <div class="item-text">
             <div class="item-name">垃圾袋</div>
-            <div class="item-summary"><span class="var">{{垃圾袋位置摘要}}</span></div>
+            <div class="item-summary">廚房流理台下方</div>
           </div>
           <span class="arrow">→</span>
         </button>
 
-        <!-- 剩食容器 -->
-        <button class="item-card" data-item="leftover">
-          <span class="item-icon">🍱</span>
+        <!-- 衛生紙濕紙巾 -->
+        <button class="item-card" data-item="tissue">
+          <span class="item-icon">🧻</span>
           <div class="item-text">
-            <div class="item-name">剩食容器</div>
-            <div class="item-summary"><span class="var">{{剩食容器位置摘要}}</span></div>
+            <div class="item-name">衛生紙濕紙巾</div>
+            <div class="item-summary">電視旁高櫃子內</div>
+          </div>
+          <span class="arrow">→</span>
+        </button>
+
+        <!-- 電視遙控器 -->
+        <button class="item-card" data-item="remote">
+          <span class="item-icon">📺</span>
+          <div class="item-text">
+            <div class="item-name">電視遙控器</div>
+            <div class="item-summary">面向沙發左側</div>
+          </div>
+          <span class="arrow">→</span>
+        </button>
+
+        <!-- 毛絮黏把 -->
+        <button class="item-card" data-item="lint">
+          <span class="item-icon">🧹</span>
+          <div class="item-text">
+            <div class="item-name">毛絮黏把</div>
+            <div class="item-summary">玄關抽屜下方櫃子內</div>
+          </div>
+          <span class="arrow">→</span>
+        </button>
+
+        <!-- 醫藥箱 -->
+        <button class="item-card" data-item="medkit">
+          <span class="item-icon">🩹</span>
+          <div class="item-text">
+            <div class="item-name">醫藥箱</div>
+            <div class="item-summary">電視櫃最右邊抽屜</div>
           </div>
           <span class="arrow">→</span>
         </button>
@@ -497,22 +517,23 @@
       <!-- 飼料 -->
       <div class="map-detail-view" data-detail="food">
         <button class="btn-back"><span class="back-arrow">←</span>返回物品列表</button>
-        <h2 class="detail-title"><span class="icon-bubble">🥫</span>飼料</h2>
-        <div class="floorplan-pin-wrap floorplan-clickable">
-          <span class="ph-center">📐 floorplan.jpg</span>
+        <h2 class="detail-title"><span class="icon-bubble">🥫</span>乾飼料</h2>
+        <div class="floorplan-pin-wrap floorplan-clickable fp-real">
+          <img class="fp-img" src="images/floorplan.png" alt="平面圖">
           <span class="zoom-hint">🔍 放大</span>
-          <div class="pin-marker" style="left: {{飼料座標X}}%; top: {{飼料座標Y}}%;">
+          <div class="pin-marker" style="left: 41%; top: 35%;">
             <div class="pulse"></div>
             <div class="pin-body">🥫</div>
           </div>
         </div>
         <!-- 實景照片：找不到 item-food.jpg 會自動隱藏 -->
-        <img class="item-photo" src="images/item-food.jpg" alt="飼料實景" onerror="this.style.display='none'">
+        <img class="item-photo" src="images/item-food.jpg" alt="乾飼料實景" onerror="this.style.display='none'">
+        <img class="item-photo" src="images/item-food-2.jpg" alt="乾飼料實景 2" onerror="this.style.display='none'">
         <div class="item-note-box">
           <span class="note-icon">i</span>
           <div class="note-content">
             <span class="note-label">補充說明</span>
-            <span class="var">{{飼料補充說明}}</span>
+            電視旁高櫃子內後方
           </div>
         </div>
       </div>
@@ -521,10 +542,10 @@
       <div class="map-detail-view" data-detail="litter">
         <button class="btn-back"><span class="back-arrow">←</span>返回物品列表</button>
         <h2 class="detail-title"><span class="icon-bubble">📦</span>貓砂</h2>
-        <div class="floorplan-pin-wrap floorplan-clickable">
-          <span class="ph-center">📐 floorplan.jpg</span>
+        <div class="floorplan-pin-wrap floorplan-clickable fp-real">
+          <img class="fp-img" src="images/floorplan.png" alt="平面圖">
           <span class="zoom-hint">🔍 放大</span>
-          <div class="pin-marker" style="left: {{貓砂座標X}}%; top: {{貓砂座標Y}}%;">
+          <div class="pin-marker" style="left: 75%; top: 50%;">
             <div class="pulse"></div>
             <div class="pin-body">📦</div>
           </div>
@@ -534,29 +555,7 @@
           <span class="note-icon">i</span>
           <div class="note-content">
             <span class="note-label">補充說明</span>
-            <span class="var">{{貓砂補充說明}}</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- 吸塵器 -->
-      <div class="map-detail-view" data-detail="vacuum">
-        <button class="btn-back"><span class="back-arrow">←</span>返回物品列表</button>
-        <h2 class="detail-title"><span class="icon-bubble">🧹</span>吸塵器</h2>
-        <div class="floorplan-pin-wrap floorplan-clickable">
-          <span class="ph-center">📐 floorplan.jpg</span>
-          <span class="zoom-hint">🔍 放大</span>
-          <div class="pin-marker" style="left: {{吸塵器座標X}}%; top: {{吸塵器座標Y}}%;">
-            <div class="pulse"></div>
-            <div class="pin-body">🧹</div>
-          </div>
-        </div>
-        <img class="item-photo" src="images/item-vacuum.jpg" alt="吸塵器實景" onerror="this.style.display='none'">
-        <div class="item-note-box">
-          <span class="note-icon">i</span>
-          <div class="note-content">
-            <span class="note-label">補充說明</span>
-            <span class="var">{{吸塵器補充說明}}</span>
+            床下收納櫃
           </div>
         </div>
       </div>
@@ -565,10 +564,10 @@
       <div class="map-detail-view" data-detail="trash">
         <button class="btn-back"><span class="back-arrow">←</span>返回物品列表</button>
         <h2 class="detail-title"><span class="icon-bubble">🗑️</span>垃圾袋</h2>
-        <div class="floorplan-pin-wrap floorplan-clickable">
-          <span class="ph-center">📐 floorplan.jpg</span>
+        <div class="floorplan-pin-wrap floorplan-clickable fp-real">
+          <img class="fp-img" src="images/floorplan.png" alt="平面圖">
           <span class="zoom-hint">🔍 放大</span>
-          <div class="pin-marker" style="left: {{垃圾袋座標X}}%; top: {{垃圾袋座標Y}}%;">
+          <div class="pin-marker" style="left: 75%; top: 88%;">
             <div class="pulse"></div>
             <div class="pin-body">🗑️</div>
           </div>
@@ -578,29 +577,95 @@
           <span class="note-icon">i</span>
           <div class="note-content">
             <span class="note-label">補充說明</span>
-            <span class="var">{{垃圾袋補充說明}}</span>
+            廚房流理台下方
           </div>
         </div>
       </div>
 
-      <!-- 剩食容器 -->
-      <div class="map-detail-view" data-detail="leftover">
+      <!-- 衛生紙濕紙巾 -->
+      <div class="map-detail-view" data-detail="tissue">
         <button class="btn-back"><span class="back-arrow">←</span>返回物品列表</button>
-        <h2 class="detail-title"><span class="icon-bubble">🍱</span>剩食容器</h2>
-        <div class="floorplan-pin-wrap floorplan-clickable">
-          <span class="ph-center">📐 floorplan.jpg</span>
+        <h2 class="detail-title"><span class="icon-bubble">🧻</span>衛生紙濕紙巾</h2>
+        <div class="floorplan-pin-wrap floorplan-clickable fp-real">
+          <img class="fp-img" src="images/floorplan.png" alt="平面圖">
           <span class="zoom-hint">🔍 放大</span>
-          <div class="pin-marker" style="left: {{剩食容器座標X}}%; top: {{剩食容器座標Y}}%;">
+          <div class="pin-marker" style="left: 41%; top: 35%;">
             <div class="pulse"></div>
-            <div class="pin-body">🍱</div>
+            <div class="pin-body">🧻</div>
           </div>
         </div>
-        <img class="item-photo" src="images/item-leftover.jpg" alt="剩食容器實景" onerror="this.style.display='none'">
+        <img class="item-photo" src="images/item-tissue.jpg" alt="衛生紙濕紙巾實景" onerror="this.style.display='none'">
         <div class="item-note-box">
           <span class="note-icon">i</span>
           <div class="note-content">
             <span class="note-label">補充說明</span>
-            <span class="var">{{剩食容器補充說明}}</span>
+            電視旁高櫃子內
+          </div>
+        </div>
+      </div>
+
+      <!-- 電視遙控器 -->
+      <div class="map-detail-view" data-detail="remote">
+        <button class="btn-back"><span class="back-arrow">←</span>返回物品列表</button>
+        <h2 class="detail-title"><span class="icon-bubble">📺</span>電視遙控器</h2>
+        <div class="floorplan-pin-wrap floorplan-clickable fp-real">
+          <img class="fp-img" src="images/floorplan.png" alt="平面圖">
+          <span class="zoom-hint">🔍 放大</span>
+          <div class="pin-marker" style="left: 66%; top: 38%;">
+            <div class="pulse"></div>
+            <div class="pin-body">📺</div>
+          </div>
+        </div>
+        <img class="item-photo" src="images/item-remote.jpg" alt="電視遙控器實景" onerror="this.style.display='none'">
+        <div class="item-note-box">
+          <span class="note-icon">i</span>
+          <div class="note-content">
+            <span class="note-label">補充說明</span>
+            面向沙發左側
+          </div>
+        </div>
+      </div>
+
+      <!-- 毛絮黏把 -->
+      <div class="map-detail-view" data-detail="lint">
+        <button class="btn-back"><span class="back-arrow">←</span>返回物品列表</button>
+        <h2 class="detail-title"><span class="icon-bubble">🧹</span>毛絮黏把</h2>
+        <div class="floorplan-pin-wrap floorplan-clickable fp-real">
+          <img class="fp-img" src="images/floorplan.png" alt="平面圖">
+          <span class="zoom-hint">🔍 放大</span>
+          <div class="pin-marker" style="left: 53%; top: 88%;">
+            <div class="pulse"></div>
+            <div class="pin-body">🧹</div>
+          </div>
+        </div>
+        <img class="item-photo" src="images/item-lint.jpg" alt="毛絮黏把實景" onerror="this.style.display='none'">
+        <div class="item-note-box">
+          <span class="note-icon">i</span>
+          <div class="note-content">
+            <span class="note-label">補充說明</span>
+            玄關抽屜下方櫃子內
+          </div>
+        </div>
+      </div>
+
+      <!-- 醫藥箱 -->
+      <div class="map-detail-view" data-detail="medkit">
+        <button class="btn-back"><span class="back-arrow">←</span>返回物品列表</button>
+        <h2 class="detail-title"><span class="icon-bubble">🩹</span>醫藥箱</h2>
+        <div class="floorplan-pin-wrap floorplan-clickable fp-real">
+          <img class="fp-img" src="images/floorplan.png" alt="平面圖">
+          <span class="zoom-hint">🔍 放大</span>
+          <div class="pin-marker" style="left: 42%; top: 43%;">
+            <div class="pulse"></div>
+            <div class="pin-body">🩹</div>
+          </div>
+        </div>
+        <img class="item-photo" src="images/item-medkit.jpg" alt="醫藥箱實景" onerror="this.style.display='none'">
+        <div class="item-note-box">
+          <span class="note-icon">i</span>
+          <div class="note-content">
+            <span class="note-label">補充說明</span>
+            電視櫃最右邊抽屜
           </div>
         </div>
       </div>

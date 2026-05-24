@@ -19,8 +19,8 @@
   --radius-sm: 12px;
 
   /* 字體：標題用手寫感，內文一律 Noto Sans TC 確保中文不缺字 */
-  --font-display: "Caveat","Patrick Hand","Klee One",sans-serif;                                  /* 英文裝飾大標 */
-  --font-hand:    "Klee One","Noto Sans TC","PingFang TC",sans-serif;                              /* 中文標題（手寫感） */
+  --font-display: "Caveat","Patrick Hand","LXGW WenKai TC",sans-serif;                                  /* 英文裝飾大標 */
+  --font-hand:    "LXGW WenKai TC","Noto Sans TC","PingFang TC",sans-serif;                              /* 中文標題（手寫感） */
   --font-body:    "Noto Sans TC",-apple-system,BlinkMacSystemFont,"PingFang TC","Microsoft JhengHei",system-ui,sans-serif; /* 內文（標準易讀） */
   --font-num:     "Patrick Hand","Caveat",sans-serif;                                              /* 數字 */
 }
