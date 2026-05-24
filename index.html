@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#FAF6F0">
+<title>貓咪代班照顧 🐱</title>
+
+<!-- Google Fonts: 手寫感字體組合 -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- 標題用：Caveat / Patrick Hand / Klee One；內文用：Noto Sans TC (確保所有中文字都正常顯示) -->
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Klee+One:wght@400;600&family=Patrick+Hand&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+<div class="phone">
+
+  <!-- =========================================
+       頂部標題列
+       ========================================= -->
+  <header class="topbar">
+    <div>
+      <div class="eyebrow" id="topEn">Today's tasks</div>
+      <h1 id="topTitle">今日任務</h1>
+    </div>
+    <div class="pawprint">🐾</div>
+  </header>
+
+  <main>
+
+    <!-- =====================================================
+         Tab 1: 🐱 貓咪 小檔案
+         ===================================================== -->
+    <section class="tab-panel" id="panel-cats" data-screen-label="01 貓咪">
+
+      <div class="section-title">
+        <span class="zh">我家的兩位主子</span>
+        <span class="en">Meet the cats</span>
+      </div>
+
+      <!-- 貓咪 1 -->
+      <article class="card cat-card">
+        <div class="cat-photo">
+          <span class="ph-label">📷 cat1.jpg</span>
+        </div>
+        <div class="cat-body">
+          <h2 class="cat-name">
+            <span class="var">{{貓咪1名字}}</span>
+            <span class="badge">#1</span>
+          </h2>
+          <div class="cat-row">
+            <span class="label">個性</span>
+            <span class="value"><span class="var">{{貓咪1個性}}</span></span>
+          </div>
+          <div class="cat-row warn">
+            <span class="label">注意</span>
+            <span class="value"><span class="var">{{貓咪1注意事項}}</span></span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 貓咪 2 -->
+      <article class="card cat-card">
+        <div class="cat-photo">
+          <span class="ph-label">📷 cat2.jpg</span>
+        </div>
+        <div class="cat-body">
+          <h2 class="cat-name">
+            <span class="var">{{貓咪2名字}}</span>
+            <span class="badge">#2</span>
+          </h2>
+          <div class="cat-row">
+            <span class="label">個性</span>
+            <span class="value"><span class="var">{{貓咪2個性}}</span></span>
+          </div>
+          <div class="cat-row warn">
+            <span class="label">注意</span>
+            <span class="value"><span class="var">{{貓咪2注意事項}}</span></span>
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+
+    <!-- =====================================================
+         Tab 2: ✅ 任務（預設顯示）
+         ===================================================== -->
+    <section class="tab-panel active" id="panel-tasks" data-screen-label="02 任務">
+
+      <!-- 進度區塊 -->
+      <div class="progress-wrap">
+        <div class="progress-top">
+          <div class="left">
+            <div class="label">Today's progress</div>
+            <div class="count"><span id="progNum">0</span><span class="total">/5</span></div>
+          </div>
+          <button class="btn-reset" id="btnReset" aria-label="重置">↻ 重置</button>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" id="progFill"></div></div>
+        <div class="progress-tip" id="progTip">點一下卡片可以展開步驟 👇</div>
+      </div>
+
+      <!-- 慶祝橫幅 -->
+      <div class="celebrate" id="celebrate">
+        <div class="big">辛苦了！🐱</div>
+        <div class="small">兩位主子已經吃飽喝足～感謝你！</div>
+      </div>
+
+      <!-- 任務 1：收前一天的碗 -->
+      <article class="task" data-id="t1">
+        <header class="task-head">
+          <label class="chk" onclick="event.stopPropagation()">
+            <input type="checkbox" data-task="t1">
+            <span class="box"></span>
+            <span class="check">
+              <svg viewBox="0 0 24 24"><polyline points="4,13 10,18 20,7"/></svg>
+            </span>
+          </label>
+          <span class="num">01</span>
+          <div class="text">
+            <p class="title-zh">收前一天的碗 <span class="done-flag">✓ 完成</span></p>
+            <p class="summary">把昨天的水碗、飼料盤、濕食碗集中</p>
+          </div>
+          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6,9 12,15 18,9"/></svg>
+        </header>
+        <div class="task-body">
+          <div class="task-body-inner">
+            <ol class="steps">
+              <li>把昨天剩下的水碗、飼料盤、濕食碗集中到水槽</li>
+            </ol>
+            <div class="note">
+              如果濕食碗有剩餘食物，先倒到 <span class="key">{{剩食容器}}</span> 並冰到冰箱
+            </div>
+            <div class="photo-ph"><span>📷 收碗示範照片</span></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 任務 2：鏟貓砂 -->
+      <article class="task" data-id="t2">
+        <header class="task-head">
+          <label class="chk" onclick="event.stopPropagation()">
+            <input type="checkbox" data-task="t2">
+            <span class="box"></span>
+            <span class="check">
+              <svg viewBox="0 0 24 24"><polyline points="4,13 10,18 20,7"/></svg>
+            </span>
+          </label>
+          <span class="num">02</span>
+          <div class="text">
+            <p class="title-zh">鏟貓砂 <span class="done-flag">✓ 完成</span></p>
+            <p class="summary">把便便鏟出來，丟到小盆子</p>
+          </div>
+          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6,9 12,15 18,9"/></svg>
+        </header>
+        <div class="task-body">
+          <div class="task-body-inner">
+            <ol class="steps">
+              <li>鏟出貓砂後丟到 <span class="key">{{小盆子位置}}</span></li>
+            </ol>
+            <div class="note">
+              小盆子滿了之後丟到 <span class="key">{{大垃圾桶位置}}</span>，垃圾袋備品在 <span class="key">{{垃圾袋位置}}</span>
+            </div>
+            <div class="photo-ph"><span>📷 小盆子位置照片</span></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 任務 3：吸地板 -->
+      <article class="task" data-id="t3">
+        <header class="task-head">
+          <label class="chk" onclick="event.stopPropagation()">
+            <input type="checkbox" data-task="t3">
+            <span class="box"></span>
+            <span class="check">
+              <svg viewBox="0 0 24 24"><polyline points="4,13 10,18 20,7"/></svg>
+            </span>
+          </label>
+          <span class="num">03</span>
+          <div class="text">
+            <p class="title-zh">吸地板 <span class="done-flag">✓ 完成</span></p>
+            <p class="summary">客廳 + 貓砂盆周圍重點吸一下</p>
+          </div>
+          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6,9 12,15 18,9"/></svg>
+        </header>
+        <div class="task-body">
+          <div class="task-body-inner">
+            <ol class="steps">
+              <li>吸塵器在 <span class="key">{{吸塵器位置}}</span></li>
+              <li>重點吸客廳和貓砂盆周圍</li>
+            </ol>
+            <div class="note">
+              <span class="var">{{吸塵器使用注意}}</span>
+            </div>
+            <div class="photo-ph"><span>📷 吸塵器照片</span></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 任務 4：洗碗 -->
+      <article class="task" data-id="t4">
+        <header class="task-head">
+          <label class="chk" onclick="event.stopPropagation()">
+            <input type="checkbox" data-task="t4">
+            <span class="box"></span>
+            <span class="check">
+              <svg viewBox="0 0 24 24"><polyline points="4,13 10,18 20,7"/></svg>
+            </span>
+          </label>
+          <span class="num">04</span>
+          <div class="text">
+            <p class="title-zh">洗碗 <span class="done-flag">✓ 完成</span></p>
+            <p class="summary">把剛收的碗洗乾淨晾乾</p>
+          </div>
+          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6,9 12,15 18,9"/></svg>
+        </header>
+        <div class="task-body">
+          <div class="task-body-inner">
+            <ol class="steps">
+              <li>把剛收的碗洗乾淨</li>
+              <li>放到瀝水架晾乾</li>
+            </ol>
+            <div class="note">
+              <span class="var">{{洗碗注意事項}}</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 任務 5：放飯 -->
+      <article class="task" data-id="t5">
+        <header class="task-head">
+          <label class="chk" onclick="event.stopPropagation()">
+            <input type="checkbox" data-task="t5">
+            <span class="box"></span>
+            <span class="check">
+              <svg viewBox="0 0 24 24"><polyline points="4,13 10,18 20,7"/></svg>
+            </span>
+          </label>
+          <span class="num">05</span>
+          <div class="text">
+            <p class="title-zh">放飯 🍚 <span class="done-flag">✓ 完成</span></p>
+            <p class="summary">兩隻貓份量不同，看仔細～</p>
+          </div>
+          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6,9 12,15 18,9"/></svg>
+        </header>
+        <div class="task-body">
+          <div class="task-body-inner">
+
+            <!-- 貓 1 -->
+            <div class="subcat">
+              <div class="sc-head"><span class="dot"></span><span class="var">{{貓咪1名字}}</span></div>
+              <div class="sc-row"><span class="k">份量</span><span class="v"><span class="var">{{貓1份量}}</span></span></div>
+              <div class="sc-row"><span class="k">位置</span><span class="v"><span class="var">{{貓1餵食位置}}</span></span></div>
+              <div class="sc-row"><span class="k">注意</span><span class="v"><span class="var">{{貓1餵食注意}}</span></span></div>
+            </div>
+
+            <!-- 貓 2 -->
+            <div class="subcat">
+              <div class="sc-head"><span class="dot"></span><span class="var">{{貓咪2名字}}</span></div>
+              <div class="sc-row"><span class="k">份量</span><span class="v"><span class="var">{{貓2份量}}</span></span></div>
+              <div class="sc-row"><span class="k">位置</span><span class="v"><span class="var">{{貓2餵食位置}}</span></span></div>
+              <div class="sc-row"><span class="k">注意</span><span class="v"><span class="var">{{貓2餵食注意}}</span></span></div>
+            </div>
+
+            <ol class="steps" style="margin-top:14px;">
+              <li>最後 → 放好<span class="deco-underline">新鮮的水</span> 💧</li>
+            </ol>
+            <div class="photo-ph"><span>📷 餵食示範照片</span></div>
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+
+    <!-- =====================================================
+         Tab 3: 🗺️ 位置（兩層導航：清單 → 詳細頁）
+         ===================================================== -->
+    <section class="tab-panel" id="panel-map" data-screen-label="03 位置">
+
+      <!-- ---------- 第一層：物品清單 ---------- -->
+      <div class="map-list-view" id="mapListView">
+
+        <div class="section-title">
+          <span class="zh">物品都放哪</span>
+          <span class="en">Where things are</span>
+        </div>
+
+        <!-- 飼料 -->
+        <button class="item-card" data-item="food">
+          <span class="item-icon">🥫</span>
+          <div class="item-text">
+            <div class="item-name">飼料</div>
+            <div class="item-summary"><span class="var">{{飼料位置摘要}}</span></div>
+          </div>
+          <span class="arrow">→</span>
+        </button>
+
+        <!-- 貓砂 -->
+        <button class="item-card" data-item="litter">
+          <span class="item-icon">📦</span>
+          <div class="item-text">
+            <div class="item-name">貓砂</div>
+            <div class="item-summary"><span class="var">{{貓砂位置摘要}}</span></div>
+          </div>
+          <span class="arrow">→</span>
+        </button>
+
+        <!-- 吸塵器 -->
+        <button class="item-card" data-item="vacuum">
+          <span class="item-icon">🧹</span>
+          <div class="item-text">
+            <div class="item-name">吸塵器</div>
+            <div class="item-summary"><span class="var">{{吸塵器位置摘要}}</span></div>
+          </div>
+          <span class="arrow">→</span>
+        </button>
+
+        <!-- 垃圾袋 -->
+        <button class="item-card" data-item="trash">
+          <span class="item-icon">🗑️</span>
+          <div class="item-text">
+            <div class="item-name">垃圾袋</div>
+            <div class="item-summary"><span class="var">{{垃圾袋位置摘要}}</span></div>
+          </div>
+          <span class="arrow">→</span>
+        </button>
+
+        <!-- 剩食容器 -->
+        <button class="item-card" data-item="leftover">
+          <span class="item-icon">🍱</span>
+          <div class="item-text">
+            <div class="item-name">剩食容器</div>
+            <div class="item-summary"><span class="var">{{剩食容器位置摘要}}</span></div>
+          </div>
+          <span class="arrow">→</span>
+        </button>
+
+        <!--
+          新增物品範本（複製整段 + 在下方詳細頁區同樣新增一個 .map-detail-view）：
+
+          <button class="item-card" data-item="custom1">
+            <span class="item-icon">📌</span>
+            <div class="item-text">
+              <div class="item-name">{{物品名稱}}</div>
+              <div class="item-summary">{{物品位置摘要}}</div>
+            </div>
+            <span class="arrow">→</span>
+          </button>
+        -->
+      </div>
+
+
+      <!-- ---------- 第二層：5 個物品的詳細頁 ----------
+           點清單會切到對應 data-detail 的詳細頁；
+           離開 Tab 後再回來會自動 reset 回清單。
+      -->
+
+      <!-- 飼料 -->
+      <div class="map-detail-view" data-detail="food">
+        <button class="btn-back"><span class="back-arrow">←</span>返回物品列表</button>
+        <h2 class="detail-title"><span class="icon-bubble">🥫</span>飼料</h2>
+        <div class="floorplan-pin-wrap floorplan-clickable">
+          <span class="ph-center">📐 floorplan.jpg</span>
+          <span class="zoom-hint">🔍 放大</span>
+          <div class="pin-marker" style="left: {{飼料座標X}}%; top: {{飼料座標Y}}%;">
+            <div class="pulse"></div>
+            <div class="pin-body">🥫</div>
+          </div>
+        </div>
+        <!-- 實景照片：找不到 item-food.jpg 會自動隱藏 -->
+        <img class="item-photo" src="images/item-food.jpg" alt="飼料實景" onerror="this.style.display='none'">
+        <div class="item-note-box">
+          <span class="note-icon">i</span>
+          <div class="note-content">
+            <span class="note-label">補充說明</span>
+            <span class="var">{{飼料補充說明}}</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 貓砂 -->
+      <div class="map-detail-view" data-detail="litter">
+        <button class="btn-back"><span class="back-arrow">←</span>返回物品列表</button>
+        <h2 class="detail-title"><span class="icon-bubble">📦</span>貓砂</h2>
+        <div class="floorplan-pin-wrap floorplan-clickable">
+          <span class="ph-center">📐 floorplan.jpg</span>
+          <span class="zoom-hint">🔍 放大</span>
+          <div class="pin-marker" style="left: {{貓砂座標X}}%; top: {{貓砂座標Y}}%;">
+            <div class="pulse"></div>
+            <div class="pin-body">📦</div>
+          </div>
+        </div>
+        <img class="item-photo" src="images/item-litter.jpg" alt="貓砂實景" onerror="this.style.display='none'">
+        <div class="item-note-box">
+          <span class="note-icon">i</span>
+          <div class="note-content">
+            <span class="note-label">補充說明</span>
+            <span class="var">{{貓砂補充說明}}</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 吸塵器 -->
+      <div class="map-detail-view" data-detail="vacuum">
+        <button class="btn-back"><span class="back-arrow">←</span>返回物品列表</button>
+        <h2 class="detail-title"><span class="icon-bubble">🧹</span>吸塵器</h2>
+        <div class="floorplan-pin-wrap floorplan-clickable">
+          <span class="ph-center">📐 floorplan.jpg</span>
+          <span class="zoom-hint">🔍 放大</span>
+          <div class="pin-marker" style="left: {{吸塵器座標X}}%; top: {{吸塵器座標Y}}%;">
+            <div class="pulse"></div>
+            <div class="pin-body">🧹</div>
+          </div>
+        </div>
+        <img class="item-photo" src="images/item-vacuum.jpg" alt="吸塵器實景" onerror="this.style.display='none'">
+        <div class="item-note-box">
+          <span class="note-icon">i</span>
+          <div class="note-content">
+            <span class="note-label">補充說明</span>
+            <span class="var">{{吸塵器補充說明}}</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 垃圾袋 -->
+      <div class="map-detail-view" data-detail="trash">
+        <button class="btn-back"><span class="back-arrow">←</span>返回物品列表</button>
+        <h2 class="detail-title"><span class="icon-bubble">🗑️</span>垃圾袋</h2>
+        <div class="floorplan-pin-wrap floorplan-clickable">
+          <span class="ph-center">📐 floorplan.jpg</span>
+          <span class="zoom-hint">🔍 放大</span>
+          <div class="pin-marker" style="left: {{垃圾袋座標X}}%; top: {{垃圾袋座標Y}}%;">
+            <div class="pulse"></div>
+            <div class="pin-body">🗑️</div>
+          </div>
+        </div>
+        <img class="item-photo" src="images/item-trash.jpg" alt="垃圾袋實景" onerror="this.style.display='none'">
+        <div class="item-note-box">
+          <span class="note-icon">i</span>
+          <div class="note-content">
+            <span class="note-label">補充說明</span>
+            <span class="var">{{垃圾袋補充說明}}</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 剩食容器 -->
+      <div class="map-detail-view" data-detail="leftover">
+        <button class="btn-back"><span class="back-arrow">←</span>返回物品列表</button>
+        <h2 class="detail-title"><span class="icon-bubble">🍱</span>剩食容器</h2>
+        <div class="floorplan-pin-wrap floorplan-clickable">
+          <span class="ph-center">📐 floorplan.jpg</span>
+          <span class="zoom-hint">🔍 放大</span>
+          <div class="pin-marker" style="left: {{剩食容器座標X}}%; top: {{剩食容器座標Y}}%;">
+            <div class="pulse"></div>
+            <div class="pin-body">🍱</div>
+          </div>
+        </div>
+        <img class="item-photo" src="images/item-leftover.jpg" alt="剩食容器實景" onerror="this.style.display='none'">
+        <div class="item-note-box">
+          <span class="note-icon">i</span>
+          <div class="note-content">
+            <span class="note-label">補充說明</span>
+            <span class="var">{{剩食容器補充說明}}</span>
+          </div>
+        </div>
+      </div>
+
+      <!--
+        新增物品詳細頁範本（與上方清單一一對應，data-detail 要與 data-item 相同）：
+
+        <div class="map-detail-view" data-detail="custom1">
+          <button class="btn-back"><span class="back-arrow">←</span>返回物品列表</button>
+          <h2 class="detail-title"><span class="icon-bubble">📌</span>{{物品名稱}}</h2>
+          <div class="floorplan-pin-wrap floorplan-clickable">
+            <span class="ph-center">📐 floorplan.jpg</span>
+            <span class="zoom-hint">🔍 放大</span>
+            <div class="pin-marker" style="left: {{物品座標X}}%; top: {{物品座標Y}}%;">
+              <div class="pulse"></div>
+              <div class="pin-body">📌</div>
+            </div>
+          </div>
+          <img class="item-photo" src="images/item-custom1.jpg" alt="實景" onerror="this.style.display='none'">
+          <div class="item-note-box">
+            <span class="note-icon">i</span>
+            <div class="note-content">
+              <span class="note-label">補充說明</span>
+              {{物品補充說明}}
+            </div>
+          </div>
+        </div>
+      -->
+
+    </section>
+
+
+    <!-- =====================================================
+         Tab 4: ❓ FAQ + 緊急聯絡
+         ===================================================== -->
+    <section class="tab-panel" id="panel-faq" data-screen-label="04 FAQ">
+
+      <div class="section-title">
+        <span class="zh">遇到狀況怎麼辦</span>
+        <span class="en">If something happens</span>
+      </div>
+
+      <!-- FAQ 1 -->
+      <div class="faq-item">
+        <header class="faq-q">
+          <span class="q-mark">Q</span>
+          <span class="q-text">貓咪不吃飯怎麼辦？</span>
+          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="#9C8772" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6,9 12,15 18,9"/></svg>
+        </header>
+        <div class="faq-a">
+          <div class="faq-a-inner"><span class="var">{{不吃飯處理方式}}</span></div>
+        </div>
+      </div>
+
+      <!-- FAQ 2 -->
+      <div class="faq-item">
+        <header class="faq-q">
+          <span class="q-mark">Q</span>
+          <span class="q-text">貓咪吐了怎麼辦？</span>
+          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="#9C8772" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6,9 12,15 18,9"/></svg>
+        </header>
+        <div class="faq-a">
+          <div class="faq-a-inner"><span class="var">{{嘔吐處理方式}}</span></div>
+        </div>
+      </div>
+
+      <!-- FAQ 3 -->
+      <div class="faq-item">
+        <header class="faq-q">
+          <span class="q-mark">Q</span>
+          <span class="q-text">貓咪躲起來不出現怎麼辦？</span>
+          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="#9C8772" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6,9 12,15 18,9"/></svg>
+        </header>
+        <div class="faq-a">
+          <div class="faq-a-inner"><span class="var">{{躲藏處理方式}}</span></div>
+        </div>
+      </div>
+
+      <!-- 緊急聯絡 -->
+      <section class="emergency">
+        <div class="emergency-head">
+          <span class="icon">!</span>
+          <h3>緊急聯絡</h3>
+          <span class="en">SOS</span>
+        </div>
+
+        <!-- 飼主 -->
+        <div class="contact-block">
+          <div class="label">飼主</div>
+          <div class="name">我（隨時打給我都可以！）</div>
+          <a class="tel-link" href="tel:{{飼主電話}}">
+            📞 撥打飼主電話
+            <span class="num"><span class="var" style="background:rgba(255,255,255,0.9)">{{飼主電話}}</span></span>
+          </a>
+        </div>
+
+        <!-- 動物醫院 -->
+        <div class="contact-block">
+          <div class="label">附近動物醫院</div>
+          <div class="name"><span class="var" style="background:rgba(255,255,255,0.9)">{{動物醫院名稱}}</span></div>
+          <div class="addr">📍 <span class="var" style="background:rgba(255,255,255,0.9)">{{動物醫院地址}}</span></div>
+          <a class="tel-link" href="tel:{{動物醫院電話}}">
+            📞 撥打醫院電話
+            <span class="num"><span class="var" style="background:rgba(255,255,255,0.9)">{{動物醫院電話}}</span></span>
+          </a>
+          <a class="map-link" href="https://www.google.com/maps/search/?api=1&query={{動物醫院地址}}" target="_blank" rel="noopener">
+            📍 在 Google Map 開啟
+          </a>
+        </div>
+      </section>
+
+    </section>
+
+  </main>
+
+  <!-- =========================================
+       底部 Tab Bar
+       ========================================= -->
+  <nav class="tabbar" role="tablist">
+    <!-- 貓咪：手繪貓臉輪廓 -->
+    <button class="tab-btn" data-tab="cats" role="tab">
+      <span class="icon">
+        <svg viewBox="0 0 28 28" aria-hidden="true">
+          <!-- 耳朵 + 頭部輪廓（一筆畫感） -->
+          <path d="M5.5 11 C5 7.5 5.2 5 6 4.6 C7 4.2 9 6.2 10.2 8 C11.6 7.5 13 7.3 14 7.3 C15 7.3 16.4 7.5 17.8 8 C19 6.2 21 4.2 22 4.6 C22.8 5 23 7.5 22.5 11 C23.5 12.5 24 14 24 15.6 C24 20 19.6 23.4 14 23.4 C8.4 23.4 4 20 4 15.6 C4 14 4.5 12.5 5.5 11 Z"/>
+          <!-- 眼睛 -->
+          <path d="M10.5 14.2 C10.5 14.9 10.8 15.3 11.2 15.3"/>
+          <path d="M17.5 14.2 C17.5 14.9 17.2 15.3 16.8 15.3"/>
+          <!-- 鼻子 + 嘴 -->
+          <path d="M13.4 17.2 L14 17.8 L14.6 17.2"/>
+          <path d="M14 17.8 L14 18.6"/>
+          <path d="M14 18.6 C13.4 19.4 12.6 19.4 12 18.8"/>
+          <path d="M14 18.6 C14.6 19.4 15.4 19.4 16 18.8"/>
+          <!-- 鬍鬚 -->
+          <path d="M8 16.5 L10.5 16.8" opacity="0.55"/>
+          <path d="M17.5 16.8 L20 16.5" opacity="0.55"/>
+        </svg>
+      </span>
+      <span class="label">貓咪</span>
+    </button>
+
+    <!-- 任務：手繪 checklist -->
+    <button class="tab-btn active" data-tab="tasks" role="tab">
+      <span class="icon">
+        <svg viewBox="0 0 28 28" aria-hidden="true">
+          <!-- 紙張外框（微歪） -->
+          <path d="M7.2 4.5 L19.5 4.2 C20.6 4.2 21 4.6 21 5.5 L20.8 22.5 C20.8 23.4 20.4 23.8 19.4 23.8 L7.6 24 C6.6 24 6.2 23.6 6.2 22.7 L6.5 5.7 C6.5 4.9 6.5 4.6 7.2 4.5 Z"/>
+          <!-- 第 1 項：勾選打勾 -->
+          <path d="M9 9 L11 11 L13 8.5"/>
+          <path d="M14.5 9.5 L18.2 9.3"/>
+          <!-- 第 2 項：勾選打勾 -->
+          <path d="M9 14 L11 16 L13 13.5"/>
+          <path d="M14.5 14.5 L18.2 14.3"/>
+          <!-- 第 3 項：空格 -->
+          <rect x="9" y="18.4" width="3.4" height="3.4" rx="0.8"/>
+          <path d="M14.5 20 L18.2 19.8"/>
+        </svg>
+      </span>
+      <span class="label">任務</span>
+    </button>
+
+    <!-- 位置：手繪 map pin -->
+    <button class="tab-btn" data-tab="map" role="tab">
+      <span class="icon">
+        <svg viewBox="0 0 28 28" aria-hidden="true">
+          <!-- pin 外型 -->
+          <path d="M14 3.8 C9.8 3.8 6.6 7 6.6 11.2 C6.6 16.6 13 23.5 14 23.8 C15 23.5 21.4 16.6 21.4 11.2 C21.4 7 18.2 3.8 14 3.8 Z"/>
+          <!-- pin 內小圓 -->
+          <circle cx="14" cy="11.2" r="2.6"/>
+          <!-- 底下影子小弧 -->
+          <path d="M11 24.6 C12 25 16 25 17 24.6" opacity="0.5"/>
+        </svg>
+      </span>
+      <span class="label">位置</span>
+    </button>
+
+    <!-- FAQ：手繪對話框 + 問號 -->
+    <button class="tab-btn" data-tab="faq" role="tab">
+      <span class="icon">
+        <svg viewBox="0 0 28 28" aria-hidden="true">
+          <!-- 對話框（微歪、有尾巴） -->
+          <path d="M5 7.6 C5 6 5.6 5.2 7 5.2 L21 5 C22.4 5 23 5.8 23 7.4 L23 16.6 C23 18.2 22.4 19 21 19 L13.5 19 L9 23 L9.5 19 L7 19 C5.6 19 5 18.2 5 16.6 Z"/>
+          <!-- 問號（手寫感） -->
+          <path d="M11.5 10.2 C11.5 8.8 12.6 8 14 8 C15.4 8 16.5 8.8 16.5 10.1 C16.5 11.4 15.4 11.8 14.5 12.4 C14 12.8 14 13.4 14 14"/>
+          <!-- 問號的點 -->
+          <path d="M14 15.8 L14 15.9"/>
+        </svg>
+      </span>
+      <span class="label">FAQ</span>
+    </button>
+  </nav>
+
+</div>
+
+<!-- Lightbox（位置 tab 用） -->
+<div class="lightbox" id="lightbox" role="dialog" aria-hidden="true">
+  <button class="close" id="lbClose" aria-label="關閉">✕</button>
+  <div class="big-image">
+    <span class="ph-label">📐 floorplan.jpg（放大）</span>
+  </div>
+</div>
+
+<!-- confetti 容器 -->
+<div class="confetti" id="confetti" aria-hidden="true"></div>
+
+
+<script src="js/app.js"></script>
+
+</body>
+</html>

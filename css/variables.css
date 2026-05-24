@@ -1,0 +1,26 @@
+/* ============================================
+   設計系統：米白 + 暖橘 + 手寫便條紙
+   ============================================ */
+:root{
+  --bg:        #FAF6F0;       /* 米白主背景 */
+  --bg-soft:   #FDF8F2;       /* 卡片底色 */
+  --bg-cream:  #F3EADC;       /* 淺米色（分隔/完成態） */
+  --orange:    #E8843C;       /* 主要強調橘 */
+  --orange-d:  #C96A24;       /* 深橘（hover/active） */
+  --orange-l:  #FBE8D4;       /* 淺橘（柔和底） */
+  --coffee:    #3E2F22;       /* 主要文字 */
+  --coffee-2:  #6B5544;       /* 次要文字 */
+  --coffee-3:  #9C8772;       /* 提示/淡文字 */
+  --line:      #E8DDC9;       /* 分隔線 */
+  --done:      #B6A88F;       /* 完成態灰米色 */
+  --shadow:    0 2px 8px rgba(120, 80, 40, 0.06), 0 8px 24px rgba(120, 80, 40, 0.05);
+  --shadow-lg: 0 4px 14px rgba(120, 80, 40, 0.10), 0 18px 40px rgba(120, 80, 40, 0.08);
+  --radius:    18px;
+  --radius-sm: 12px;
+
+  /* 字體：標題用手寫感，內文一律 Noto Sans TC 確保中文不缺字 */
+  --font-display: "Caveat","Patrick Hand","Klee One",sans-serif;                                  /* 英文裝飾大標 */
+  --font-hand:    "Klee One","Noto Sans TC","PingFang TC",sans-serif;                              /* 中文標題（手寫感） */
+  --font-body:    "Noto Sans TC",-apple-system,BlinkMacSystemFont,"PingFang TC","Microsoft JhengHei",system-ui,sans-serif; /* 內文（標準易讀） */
+  --font-num:     "Patrick Hand","Caveat",sans-serif;                                              /* 數字 */
+}
