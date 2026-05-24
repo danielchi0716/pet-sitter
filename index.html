@@ -106,6 +106,11 @@
         </div>
         <div class="progress-bar"><div class="progress-fill" id="progFill"></div></div>
         <div class="progress-tip" id="progTip">點一下卡片可以展開步驟 👇</div>
+        <!-- 今日節奏提示：告訴朋友為什麼這樣排序 -->
+        <div class="rhythm-chip" title="依貓咪野外作息排序">
+          <span class="rhythm-label">🐾 今日節奏</span>
+          <span class="rhythm-flow">打掃<span class="arrow"> › </span>狩獵<span class="arrow"> › </span>進食<span class="arrow"> › </span>理毛</span>
+        </div>
       </div>
 
       <!-- 慶祝橫幅 -->
@@ -134,12 +139,23 @@
         <div class="task-body">
           <div class="task-body-inner">
             <ol class="steps">
-              <li>把昨天剩下的水碗、飼料盤、濕食碗集中到水槽</li>
+              <li>把昨天剩下的水碗、飼料盤、濕食碗集中到廚房水槽</li>
+              <li>飼料盤、濕食碗可先用熱水浸泡</li>
+              <li>廚餘可先直接倒入水槽過濾網中</li>
             </ol>
-            <div class="note">
-              如果濕食碗有剩餘食物，先倒到 <span class="key">{{剩食容器}}</span> 並冰到冰箱
+            <!-- 平面圖：碗的位置（可共用元件；座標可調，網址加 #pin 點圖可讀座標）-->
+            <div class="floorplan-pin-wrap floorplan-clickable fp-real">
+              <img class="fp-img" src="images/floorplan.png" alt="平面圖：水碗 / 飼料盤 / 濕食碗 位置">
+              <span class="zoom-hint">🔍 放大</span>
+              <div class="pin-marker" style="left:34%; top:43%; --pin-color:#3E92CC;"><div class="pulse"></div><div class="pin-body"></div></div>
+              <div class="pin-marker" style="left:66%; top:34%; --pin-color:#E8843C;"><div class="pulse"></div><div class="pin-body"></div></div>
+              <div class="pin-marker" style="left:47%; top:60%; --pin-color:#C9462C;"><div class="pulse"></div><div class="pin-body"></div></div>
             </div>
-            <div class="photo-ph"><span>📷 收碗示範照片</span></div>
+            <div class="fp-legend">
+              <span><i class="dot" style="--pin-color:#3E92CC;"></i>水碗</span>
+              <span><i class="dot" style="--pin-color:#E8843C;"></i>飼料盤</span>
+              <span><i class="dot" style="--pin-color:#C9462C;"></i>濕食碗</span>
+            </div>
           </div>
         </div>
       </article>
@@ -163,13 +179,25 @@
         </header>
         <div class="task-body">
           <div class="task-body-inner">
+            <button type="button" class="photo-link" data-photo="images/litter-tools.jpg" data-alt="物品位置圖：鏟子、勺子、真空桶位置">看物品位置圖</button>
             <ol class="steps">
-              <li>鏟出貓砂後丟到 <span class="key">{{小盆子位置}}</span></li>
+              <li>一號貓砂盆上方的吸塵器平台有鏟子及勺子（紅色框）</li>
+              <li>使用鏟子及勺子一次將一號及二號盆的杷杷清理乾淨</li>
+              <li>吸塵器平台上有透明真空筒（藍色框），將杷杷倒入</li>
+              <li>若真空桶滿了，打包丟廚房垃圾桶</li>
+              <li>真空桶的塑膠袋掛在吸塵器平台上方牆面上（綠色框）</li>
             </ol>
-            <div class="note">
-              小盆子滿了之後丟到 <span class="key">{{大垃圾桶位置}}</span>，垃圾袋備品在 <span class="key">{{垃圾袋位置}}</span>
+            <!-- 平面圖：貓砂盆位置（共用元件；座標可調，網址加 #pin 點圖可讀座標）-->
+            <div class="floorplan-pin-wrap floorplan-clickable fp-real">
+              <img class="fp-img" src="images/floorplan.png" alt="平面圖：貓砂盆位置">
+              <span class="zoom-hint">🔍 放大</span>
+              <div class="pin-marker" style="left:41%; top:35%; --pin-color:#E8843C;"><div class="pulse"></div><div class="pin-body"></div></div>
+              <div class="pin-marker" style="left:90%; top:32%; --pin-color:#3E92CC;"><div class="pulse"></div><div class="pin-body"></div></div>
             </div>
-            <div class="photo-ph"><span>📷 小盆子位置照片</span></div>
+            <div class="fp-legend">
+              <span><i class="dot" style="--pin-color:#E8843C;"></i>貓砂盆 ①</span>
+              <span><i class="dot" style="--pin-color:#3E92CC;"></i>貓砂盆 ②</span>
+            </div>
           </div>
         </div>
       </article>
@@ -194,13 +222,23 @@
         <div class="task-body">
           <div class="task-body-inner">
             <ol class="steps">
-              <li>吸塵器在 <span class="key">{{吸塵器位置}}</span></li>
-              <li>重點吸客廳和貓砂盆周圍</li>
+              <li>吸塵器在一號貓砂盆上方</li>
+              <li>依下方平面圖路線把地板吸過一遍</li>
             </ol>
             <div class="note">
-              <span class="var">{{吸塵器使用注意}}</span>
+              小心碰撞，著重吸貓砂盆附近
             </div>
-            <div class="photo-ph"><span>📷 吸塵器照片</span></div>
+            <!-- 平面圖：吸地路線（SVG 折線，% 座標；網址加 #pin 點圖可讀座標微調）-->
+            <div class="floorplan-pin-wrap floorplan-clickable fp-real">
+              <img class="fp-img" src="images/floorplan.png" alt="平面圖：吸地板路線">
+              <svg class="fp-route" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                <polyline points="32,42 32,18 50,18 50,70 85,70 85,38"/>
+              </svg>
+              <span class="zoom-hint">🔍 放大</span>
+            </div>
+            <div class="fp-legend">
+              <span><i class="line-swatch"></i>吸地路線</span>
+            </div>
           </div>
         </div>
       </article>
@@ -218,22 +256,70 @@
           <span class="num">04</span>
           <div class="text">
             <p class="title-zh">洗碗 <span class="done-flag">✓ 完成</span></p>
-            <p class="summary">把剛收的碗洗乾淨晾乾</p>
+            <p class="summary">把剛收的碗洗乾淨擦乾</p>
           </div>
           <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6,9 12,15 18,9"/></svg>
         </header>
         <div class="task-body">
           <div class="task-body-inner">
+            <button type="button" class="photo-link" data-photo="images/dish-brush.jpg" data-alt="洗鐵盤跟水碗專用刷">看專用刷</button>
             <ol class="steps">
-              <li>把剛收的碗洗乾淨</li>
-              <li>放到瀝水架晾乾</li>
+              <li>用專用刷把剛收的碗洗乾淨</li>
+              <li>用廚房紙巾（在冰箱左側）將碗盤擦乾</li>
             </ol>
-            <div class="note">
-              <span class="var">{{洗碗注意事項}}</span>
-            </div>
           </div>
         </div>
       </article>
+
+      <!-- ===================== 階段分隔：清掃完成 → 進入狩獵時間 ===================== -->
+      <div class="ritual-hint">
+        <span class="icon">🎯</span>
+        <span>狩獵時間</span>
+        <span class="line"></span>
+        <span class="why">飯前小運動，比較接近野外的節奏</span>
+      </div>
+
+      <!-- 加分任務：陪玩（建議放飯前做） -->
+      <article class="task special" data-id="t7">
+        <header class="task-head">
+          <label class="chk" onclick="event.stopPropagation()">
+            <input type="checkbox" data-task="t7">
+            <span class="box"></span>
+            <span class="check">
+              <svg viewBox="0 0 24 24"><polyline points="4,13 10,18 20,7"/></svg>
+            </span>
+          </label>
+          <span class="num">✦</span>
+          <div class="text">
+            <p class="title-zh">陪玩 <span class="done-flag">✓ 完成</span></p>
+            <p class="summary">放飯前 10–15 分鐘，先讓牠們狩獵一下 ⏰</p>
+          </div>
+          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6,9 12,15 18,9"/></svg>
+        </header>
+        <div class="task-body">
+          <div class="task-body-inner">
+            <button type="button" class="photo-link" data-photo="images/toys.jpg" data-alt="玩具位置圖：紅色為玩具區、藍色為逗貓棒區">看玩具位置圖</button>
+            <ol class="steps">
+              <li>圖中紅色為玩具區，藍色為逗貓棒區
+                <ul class="substeps">
+                  <li><b>臭襪子玩具</b>：他們會自己磨蹭及兔子踢</li>
+                  <li><b>逗貓棒</b>：在貓咪 1m 範圍內隱藏或抖動獵物，誘使貓咪攻擊</li>
+                  <li><b>柑橘特殊技能「你丟我撿」</b>：紅色玩具區抽屜內有小棉球，柑橘認為叫做「蘋果」，喊名稱丟出後他「可能」會撿回來</li>
+                </ul>
+              </li>
+              <li>臭襪子、逗貓棒使用完畢後要收起來；蘋果可以留著給他們玩</li>
+            </ol>
+          </div>
+        </div>
+      </article>
+
+      <!-- ===================== 階段分隔：狩獵完了 → 進食時間 ===================== -->
+      <div class="ritual-hint">
+        <span class="icon">🍚</span>
+        <span>進食時間</span>
+        <span class="line"></span>
+        <span class="why">玩完肚子餓，吃飯吃得最香</span>
+      </div>
 
       <!-- 任務 5：放飯 -->
       <article class="task" data-id="t5">
@@ -248,36 +334,75 @@
           <span class="num">05</span>
           <div class="text">
             <p class="title-zh">放飯 🍚 <span class="done-flag">✓ 完成</span></p>
-            <p class="summary">兩隻貓份量不同，看仔細～</p>
+            <p class="summary">兩個碗各半份，記得換過濾水</p>
           </div>
           <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6,9 12,15 18,9"/></svg>
         </header>
         <div class="task-body">
           <div class="task-body-inner">
 
-            <!-- 貓 1 -->
-            <div class="subcat">
-              <div class="sc-head"><span class="dot"></span>柑橘</div>
-              <div class="sc-row"><span class="k">份量</span><span class="v"><span class="var">{{貓1份量}}</span></span></div>
-              <div class="sc-row"><span class="k">位置</span><span class="v"><span class="var">{{貓1餵食位置}}</span></span></div>
-              <div class="sc-row"><span class="k">注意</span><span class="v"><span class="var">{{貓1餵食注意}}</span></span></div>
-            </div>
-
-            <!-- 貓 2 -->
-            <div class="subcat">
-              <div class="sc-head"><span class="dot"></span>屁屁</div>
-              <div class="sc-row"><span class="k">份量</span><span class="v"><span class="var">{{貓2份量}}</span></span></div>
-              <div class="sc-row"><span class="k">位置</span><span class="v"><span class="var">{{貓2餵食位置}}</span></span></div>
-              <div class="sc-row"><span class="k">注意</span><span class="v"><span class="var">{{貓2餵食注意}}</span></span></div>
-            </div>
-
-            <ol class="steps" style="margin-top:14px;">
-              <li>最後 → 放好<span class="deco-underline">新鮮的水</span> 💧</li>
+            <ol class="steps">
+              <li>水碗裝過濾水至九分滿後放回主臥室</li>
+              <li>罐罐或餐包上會標示餵食日期</li>
+              <li>使用小湯匙，兩個碗各半份，放置貓跳台前空地
+                <div class="li-photos">
+                  <button type="button" class="photo-link" data-photo="images/feed-spoon.jpg" data-alt="挖罐罐的小鐵匙">看小湯匙</button>
+                  <button type="button" class="photo-link" data-photo="images/feed-spot.jpg" data-alt="放飯位置：貓跳台前空地">看放置位置</button>
+                </div>
+              </li>
+              <li>餐包沖洗後丟進垃圾桶；罐罐沖洗後塑膠杯丟至回收桶</li>
+              <li>水槽濾網若有廚餘，用電器櫃上的袋子（紅框）裝起來後放置冷凍庫（藍框）
+                <div class="li-photos">
+                  <button type="button" class="photo-link" data-photo="images/leftover-freezer.jpg" data-alt="廚餘袋（紅框）與冷凍庫（藍框）位置">看袋子與冷凍庫位置</button>
+                </div>
+              </li>
             </ol>
-            <div class="photo-ph"><span>📷 餵食示範照片</span></div>
           </div>
         </div>
       </article>
+
+      <!-- ===================== 階段分隔：飯後 → 理毛時間 ===================== -->
+      <div class="ritual-hint">
+        <span class="icon">🧼</span>
+        <span>理毛時間</span>
+        <span class="line"></span>
+        <span class="why">飯後最放鬆，最適合梳毛</span>
+      </div>
+
+      <!-- 加分任務：梳毛（建議飯後做） -->
+      <article class="task special" data-id="t6">
+        <header class="task-head">
+          <label class="chk" onclick="event.stopPropagation()">
+            <input type="checkbox" data-task="t6">
+            <span class="box"></span>
+            <span class="check">
+              <svg viewBox="0 0 24 24"><polyline points="4,13 10,18 20,7"/></svg>
+            </span>
+          </label>
+          <span class="num">✦</span>
+          <div class="text">
+            <p class="title-zh">梳毛 <span class="done-flag">✓ 完成</span></p>
+            <p class="summary">飯後幫忙梳梳毛，放鬆放鬆～</p>
+          </div>
+          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6,9 12,15 18,9"/></svg>
+        </header>
+        <div class="task-body">
+          <div class="task-body-inner">
+            <ol class="steps">
+              <li>梳子位置在玩具櫃旁</li>
+              <li>順著毛流方向，輕輕梳 3~5 分鐘</li>
+            </ol>
+            <div class="note">
+              有時候梳太久太舒服，柑橘會咬人。通常會先轉頭作勢要咬、尾巴會大力甩，就差不多可以停止了
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 加分區完成小提示 -->
+      <div class="special-celebrate" id="specialCelebrate">
+        ✦ 太棒了！主子今天又被寵到了 ✦
+      </div>
 
     </section>
 
@@ -669,9 +794,7 @@
 <!-- Lightbox（位置 tab 用） -->
 <div class="lightbox" id="lightbox" role="dialog" aria-hidden="true">
   <button class="close" id="lbClose" aria-label="關閉">✕</button>
-  <div class="big-image">
-    <span class="ph-label">📐 floorplan.jpg（放大）</span>
-  </div>
+  <div class="lb-stage" id="lbStage"></div>
 </div>
 
 <!-- confetti 容器 -->

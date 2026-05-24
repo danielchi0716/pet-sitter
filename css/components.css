@@ -344,6 +344,40 @@
   justify-content:center;
   line-height:1;
 }
+/* 步驟下的子項目（A、B、C…）*/
+.steps .substeps{
+  list-style:none;
+  padding:0;
+  margin:8px 0 2px;
+  counter-reset:sub;
+}
+.steps .substeps li{
+  position:relative;
+  padding:5px 0 5px 26px;
+  font-size:14px;
+  color:var(--coffee-2);
+  line-height:1.6;
+  counter-increment:sub;
+}
+.steps .substeps li::before{
+  content:counter(sub, upper-alpha);
+  position:absolute;
+  left:0;
+  top:6px;
+  width:18px;
+  height:18px;
+  border-radius:50%;
+  background:var(--orange-l);
+  color:var(--orange-d);
+  font-family:var(--font-display);
+  font-size:12px;
+  font-weight:700;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  line-height:1;
+}
+.steps .substeps b{color:var(--coffee); font-weight:600;}
 
 .note{
   background:var(--orange-l);
@@ -450,6 +484,33 @@
   border-radius:999px;
   z-index:1;
 }
+
+/* 圖片連結：點擊以放大檢視（lightbox）呈現，與平面圖放大一致 */
+.photo-link{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  margin:2px 0 12px;
+  padding:8px 14px;
+  background:var(--orange-l);
+  border:1px solid rgba(232,132,60,0.4);
+  border-radius:999px;
+  font-family:var(--font-hand);
+  font-weight:600;
+  font-size:14px;
+  color:var(--orange-d);
+  cursor:pointer;
+  -webkit-tap-highlight-color:transparent;
+}
+.photo-link:active{transform:scale(0.97);}
+/* 同一步驟下並排多張示意圖連結 */
+.li-photos{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin:8px 0 2px;
+}
+.li-photos .photo-link{margin:0;}
 
 .chevron{
   flex:0 0 auto;
@@ -608,6 +669,154 @@
   margin-top:2px;
   line-height:1.5;
   word-break:break-word;
+}
+
+/* 特別任務（加分區）視覺區隔 */
+.special-divider{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin:24px 4px 12px;
+}
+.special-divider .line{
+  flex:1;
+  height:1.5px;
+  background:repeating-linear-gradient(
+    to right,
+    var(--line) 0 6px,
+    transparent 6px 12px
+  );
+}
+.special-divider .label{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  font-family:var(--font-hand);
+  font-weight:600;
+  font-size:15px;
+  color:var(--orange-d);
+}
+.special-divider .label .star{
+  font-family:var(--font-display);
+  font-size:20px;
+  line-height:1;
+  color:var(--orange);
+}
+.special-sub{
+  margin:-6px 6px 12px;
+  font-family:var(--font-body);
+  font-size:13px;
+  color:var(--coffee-3);
+  line-height:1.5;
+}
+
+/* 進度卡進度條下方的「今日節奏」 chip */
+.rhythm-chip{
+  margin-top:10px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-family:var(--font-body);
+  font-size:12.5px;
+  color:var(--coffee-2);
+  background:var(--orange-l);
+  border-radius:999px;
+  padding:6px 12px;
+  line-height:1.4;
+}
+.rhythm-chip .rhythm-label{
+  font-family:var(--font-hand);
+  font-weight:600;
+  color:var(--orange-d);
+  font-size:12.5px;
+  white-space:nowrap;
+}
+.rhythm-chip .rhythm-flow{
+  color:var(--coffee-2);
+  flex:1;
+  letter-spacing:0.2px;
+}
+.rhythm-chip .arrow{
+  color:var(--orange);
+  margin:0 2px;
+  font-family:var(--font-display);
+  font-weight:700;
+}
+
+/* 任務卡之間的「儀式階段」提示 */
+.ritual-hint{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin:8px 6px 10px;
+  font-family:var(--font-hand);
+  font-weight:600;
+  font-size:13.5px;
+  color:var(--orange-d);
+  line-height:1.3;
+}
+.ritual-hint .icon{
+  flex:0 0 auto;
+  font-size:16px;
+  line-height:1;
+}
+.ritual-hint .line{
+  flex:1;
+  height:1.5px;
+  background:repeating-linear-gradient(
+    to right,
+    rgba(232,132,60,0.4) 0 4px,
+    transparent 4px 9px
+  );
+}
+.ritual-hint .why{
+  font-family:var(--font-body);
+  font-weight:400;
+  font-size:12px;
+  color:var(--coffee-3);
+  font-style:italic;
+}
+
+/* 加分任務（現在並排在主任務中） */
+.task.special{position:relative;}
+.task.special::before{
+  content:"加分";
+  position:absolute;
+  top:10px;
+  right:-2px;
+  background:var(--orange);
+  color:#fff;
+  font-family:var(--font-hand);
+  font-weight:600;
+  font-size:11px;
+  padding:3px 10px 3px 8px;
+  border-radius:6px 0 0 6px;
+  letter-spacing:1px;
+  box-shadow:0 2px 6px rgba(232,132,60,0.3);
+  z-index:1;
+}
+.task.special.done::before{
+  background:var(--done);
+  box-shadow:none;
+}
+.task.special .task-head{padding-right:60px;}
+
+/* 加分區完成提示 */
+.special-celebrate{
+  display:none;
+  text-align:center;
+  font-family:var(--font-hand);
+  font-size:14.5px;
+  color:var(--orange-d);
+  background:var(--orange-l);
+  padding:10px 14px;
+  border-radius:12px;
+  margin-top:6px;
+  border:1.5px dashed rgba(232,132,60,0.45);
+}
+.special-celebrate.show{
+  display:block;
+  animation:fadeUp .35s ease both;
 }
 
 /* ============================================
@@ -802,7 +1011,7 @@
 .pin-marker .pin-body{
   width:38px;
   height:38px;
-  background:var(--orange);
+  background:var(--pin-color, var(--orange));
   border:2.5px solid #fff;
   border-radius:50%;
   display:flex;
@@ -820,7 +1029,7 @@
   transform:translateX(-50%) rotate(45deg);
   width:12px;
   height:12px;
-  background:var(--orange);
+  background:var(--pin-color, var(--orange));
   border-right:2.5px solid #fff;
   border-bottom:2.5px solid #fff;
   z-index:-1;
@@ -829,7 +1038,7 @@
   position:absolute;
   inset:-6px;
   border-radius:50%;
-  border:2px solid var(--orange);
+  border:2px solid var(--pin-color, var(--orange));
   opacity:0;
   animation: pulse 1.8s ease-out infinite;
   animation-delay:.5s;
@@ -837,6 +1046,64 @@
 @keyframes pulse{
   0%   {transform:scale(0.7); opacity:0.55;}
   100% {transform:scale(1.7); opacity:0;}
+}
+
+/* 平面圖：真實圖片版（可共用元件）。容器比例對齊圖片，pin 以 % 精準對位 */
+.floorplan-pin-wrap.fp-real{
+  aspect-ratio: 717 / 709;
+  background:var(--bg-cream);
+}
+.floorplan-pin-wrap.fp-real::after{display:none;}
+.floorplan-pin-wrap .fp-img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+/* 平面圖圖例：pin emoji 對應說明 */
+.fp-legend{
+  display:flex;
+  flex-wrap:wrap;
+  gap:4px 16px;
+  margin:-4px 2px 2px;
+  font-family:var(--font-body);
+  font-size:13px;
+  color:var(--coffee-2);
+}
+.fp-legend span{display:inline-flex; align-items:center;}
+.fp-legend .dot{
+  width:12px;
+  height:12px;
+  border-radius:50%;
+  background:var(--pin-color);
+  border:1.5px solid #fff;
+  box-shadow:0 0 0 1px var(--line);
+  margin-right:6px;
+}
+/* 路線：SVG 折線疊在平面圖上，% 座標跟著縮放（放大檢視也會一起放大）*/
+.fp-route{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  z-index:2;
+  pointer-events:none;
+}
+.fp-route polyline{
+  fill:none;
+  stroke:var(--orange);
+  stroke-width:1.6;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  stroke-dasharray:3 2.5;
+}
+.fp-legend .line-swatch{
+  display:inline-block;
+  width:18px;
+  height:0;
+  border-top:2.5px dashed var(--orange);
+  margin-right:6px;
 }
 
 /* 詳細頁實景照片 */
@@ -905,32 +1172,24 @@
   cursor:zoom-out;
 }
 .lightbox.show{display:flex; animation:fadeUp .25s ease both;}
-.lightbox .big-image{
-  width:100%;
-  max-width:460px;
-  aspect-ratio: 4 / 3;
-  background:
-    repeating-linear-gradient(45deg, #F3EADC 0 14px, #EBDFC8 14px 28px);
-  border-radius:var(--radius);
+.lightbox .lb-stage{
   display:flex;
   align-items:center;
   justify-content:center;
-  position:relative;
-  border:1px solid var(--line);
 }
-.lightbox .big-image::after{
-  content:"";
-  position:absolute;
-  inset:14px;
-  border:1.5px dashed rgba(156,135,114,0.5);
-  border-radius:12px;
+/* 放大檢視中的平面圖：複製自原元件，pin 用 % 定位自動跟著縮放 */
+.lightbox .lb-stage .floorplan-pin-wrap{
+  width: min(92vw, 78vh);
+  margin:0;
+  cursor:default;
+  box-shadow:0 12px 40px rgba(0,0,0,0.45);
 }
-.lightbox .big-image .ph-label{
-  background:rgba(253,248,242,0.9);
-  padding:8px 14px;
-  border-radius:999px;
-  font-family:"Patrick Hand", monospace;
-  color:var(--coffee-2);
+/* 放大檢視中的純照片 */
+.lightbox .lb-photo{
+  max-width:92vw;
+  max-height:88vh;
+  border-radius:var(--radius);
+  box-shadow:0 12px 40px rgba(0,0,0,0.45);
 }
 .lightbox .close{
   position:absolute;
