@@ -780,18 +780,18 @@
 /* 加分任務（現在並排在主任務中） */
 .task.special{position:relative;}
 .task.special::before{
-  content:"加分";
+  content:"Bonus";
   position:absolute;
   top:10px;
   right:-2px;
   background:var(--orange);
   color:#fff;
-  font-family:var(--font-hand);
-  font-weight:600;
-  font-size:11px;
-  padding:3px 10px 3px 8px;
+  font-family:var(--font-display);
+  font-weight:700;
+  font-size:15px;
+  padding:2px 11px 2px 9px;
   border-radius:6px 0 0 6px;
-  letter-spacing:1px;
+  letter-spacing:0.5px;
   box-shadow:0 2px 6px rgba(232,132,60,0.3);
   z-index:1;
 }
