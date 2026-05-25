@@ -301,6 +301,3 @@ function fireConfetti(){
 
 /* ---------- 9) 初始化 ---------- */
 refreshUI();
-// 預設打開第一個任務（讓朋友看到展開效果範例）
-const firstTask = document.querySelector('.task[data-id="t1"]');
-if(firstTask) firstTask.classList.add('open');
