@@ -868,6 +868,21 @@
   transition:background .15s ease;
 }
 .depart-item:hover{background:rgba(232,132,60,0.06);}
+.depart-item-rich{list-style:none;}
+.depart-extras{
+  margin:-2px 0 4px 42px; /* 對齊 label 文字（chk 30px + gap 12px） */
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:6px;
+}
+.depart-note{
+  margin:0;
+  font-size:12.5px;
+  color:var(--coffee-3);
+  line-height:1.5;
+}
+.depart-extras .photo-link{margin:0;}
 .depart-label{
   font-size:14.5px;
   color:var(--coffee-2);

@@ -43,7 +43,7 @@ tabBtns.forEach(b=> b.addEventListener('click', ()=> switchTab(b.dataset.tab)));
 /* ---------- 2) localStorage：以今日日期為 key 自動重置 ---------- */
 const TASK_IDS = ['t1','t2','t3','t4','t5'];      // 主任務（計入 X/5 進度）
 const SPECIAL_IDS = ['t6','t7'];                  // 加分任務（不計入主進度）
-const DEPARTURE_IDS = ['d1','d2','d3','d4','d5']; // 離開前確認（不計入主進度）
+const DEPARTURE_IDS = ['d1','d2','d3','d4','d5','d6']; // 離開前確認（不計入主進度）
 const ALL_IDS = [...TASK_IDS, ...SPECIAL_IDS, ...DEPARTURE_IDS];
 
 function todayKey(){
