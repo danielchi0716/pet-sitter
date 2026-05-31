@@ -819,6 +819,66 @@
   animation:fadeUp .35s ease both;
 }
 
+/* 離開前確認事項 */
+.depart-check{
+  margin-top:18px;
+  padding:16px 18px 14px;
+  background:var(--bg-soft);
+  border:1.5px solid var(--line);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+}
+.depart-head{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding-bottom:12px;
+  margin-bottom:8px;
+  border-bottom:1px dashed var(--line);
+}
+.depart-icon{font-size:24px; line-height:1;}
+.depart-text{flex:1; min-width:0;}
+.depart-title{
+  margin:0;
+  font-family:var(--font-hand);
+  font-size:17px;
+  font-weight:600;
+  color:var(--coffee);
+}
+.depart-sub{
+  margin:2px 0 0;
+  font-size:12.5px;
+  color:var(--coffee-3);
+}
+.depart-list{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+}
+.depart-item{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:8px 4px;
+  cursor:pointer;
+  border-radius:8px;
+  transition:background .15s ease;
+}
+.depart-item:hover{background:rgba(232,132,60,0.06);}
+.depart-label{
+  font-size:14.5px;
+  color:var(--coffee-2);
+  line-height:1.5;
+  transition:color .25s ease;
+}
+.depart-item:has(input:checked) .depart-label{
+  color:var(--done);
+  text-decoration:line-through;
+}
+
 /* ============================================
    Tab 3 新版：物品清單 → 詳細頁
    ============================================ */

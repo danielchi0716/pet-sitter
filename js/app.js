@@ -43,7 +43,8 @@ tabBtns.forEach(b=> b.addEventListener('click', ()=> switchTab(b.dataset.tab)));
 /* ---------- 2) localStorage：以今日日期為 key 自動重置 ---------- */
 const TASK_IDS = ['t1','t2','t3','t4','t5'];      // 主任務（計入 X/5 進度）
 const SPECIAL_IDS = ['t6','t7'];                  // 加分任務（不計入主進度）
-const ALL_IDS = [...TASK_IDS, ...SPECIAL_IDS];
+const DEPARTURE_IDS = ['d1','d2','d3','d4','d5']; // 離開前確認（不計入主進度）
+const ALL_IDS = [...TASK_IDS, ...SPECIAL_IDS, ...DEPARTURE_IDS];
 
 function todayKey(){
   const d = new Date();
@@ -105,6 +106,11 @@ function refreshUI(){
     if(cb) cb.checked = checked;
     if(card) card.classList.toggle('done', checked);
     if(checked) specialDone++;
+  });
+  // 離開前確認（不計入主進度，無卡片展開狀態）
+  DEPARTURE_IDS.forEach(id=>{
+    const cb = document.querySelector(`input[data-task="${id}"]`);
+    if(cb) cb.checked = !!state.done[id];
   });
   const total = TASK_IDS.length;
   progNum.textContent = done;
