@@ -819,6 +819,78 @@
   animation:fadeUp .35s ease both;
 }
 
+/* 注意事項：放在任務最上方的開工提醒 */
+.notice-box{
+  margin:14px 0 18px;
+  padding:14px 16px 12px;
+  background:#FFF4E5;
+  border:1.5px solid rgba(232,132,60,0.35);
+  border-left:4px solid var(--orange);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+}
+.notice-head{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding-bottom:10px;
+  margin-bottom:8px;
+  border-bottom:1px dashed rgba(232,132,60,0.35);
+}
+.notice-icon{font-size:22px; line-height:1;}
+.notice-text{flex:1; min-width:0;}
+.notice-title{
+  margin:0;
+  font-family:var(--font-hand);
+  font-size:17px;
+  font-weight:700;
+  color:var(--orange-d);
+}
+.notice-sub{
+  margin:2px 0 0;
+  font-size:12.5px;
+  color:var(--coffee-3);
+}
+.notice-list{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+.notice-list > li{
+  position:relative;
+  padding:8px 10px 8px 18px;
+  font-size:14px;
+  line-height:1.65;
+  color:var(--coffee);
+  background:rgba(255,255,255,0.55);
+  border-radius:10px;
+}
+.notice-list > li::before{
+  content:"";
+  position:absolute;
+  left:8px;
+  top:18px;
+  width:5px;
+  height:5px;
+  border-radius:50%;
+  background:var(--orange);
+}
+.notice-key{
+  display:inline-block;
+  margin-right:6px;
+  padding:1px 8px;
+  background:var(--orange);
+  color:#fff;
+  font-family:var(--font-hand);
+  font-size:13px;
+  font-weight:600;
+  border-radius:6px;
+  vertical-align:1px;
+}
+
 /* 離開前確認事項 */
 .depart-check{
   margin-top:18px;
